@@ -1,0 +1,27 @@
+import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+    private val viewModel: UserViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        viewModel.user.observe(this, Observer { user ->
+            user?.let {
+                nameTextView.text = "${it.name.firstName} ${it.name.lastName}"
+                emailTextView.text = it.email
+                Glide.with(this).load(it.picture.large).into(profileImageView)
+            }
+        })
+
+        // Завантаження користувача при запуску
+        viewModel.loadRandomUser()
+    }
+}
