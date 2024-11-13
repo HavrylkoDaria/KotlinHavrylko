@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Текст для відображення лічильника -->
     <TextView
         android:id="@+id/textViewCounter"
         android:layout_width="wrap_content"
@@ -15,7 +14,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp" />
 
-    <!-- Кнопка для інкрементування лічильника -->
     <Button
         android:id="@+id/buttonIncrement"
         android:layout_width="wrap_content"
@@ -24,20 +22,11 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp" />
 
-    <!-- Кнопка для переходу до фрагмента -->
     <Button
-        android:id="@+id/buttonNavigateToFragment"
+        android:id="@+id/buttonSort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to Counter Fragment"
+        android:text="Start Sorting"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp" />
-
-    <!-- Контейнер для фрагмента -->
-    <FrameLayout
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="16dp" />
-
 </LinearLayout>
